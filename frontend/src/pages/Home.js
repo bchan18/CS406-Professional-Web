@@ -4,7 +4,7 @@ function Home() {
   return (
     <div className="home-page">
       <h1>Brian Chan</h1>
-      <p>I am a healthprofessional transitioning into the tech industry with a strong foundation in both biological sciences and computer science. 
+      <p>I am a health professional transitioning into the tech industry with a strong foundation in both biological sciences and computer science. 
         With hands-on experience in automation and laboratory workflows, I have successfully optimized processes, improving efficiency by over 50% in my previous role. I
          am currently completing a Bachelor of Science in Computer Science at Oregon State University with an expected gradudation in June 2025.
          </p>
