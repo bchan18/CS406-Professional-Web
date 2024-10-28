@@ -35,7 +35,9 @@ body {       /* Can alternatively define in html {}. */
 }
 
 /*  ----- Page layout blocks -----  */
-header {}
+header {
+
+}
 main {}
 section {}
 article {}
@@ -70,6 +72,8 @@ nav a:hover {
 /*  -----  Typography  ----- */
 p {
   color: #555;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 br {}
 ol, ul, dl {}
@@ -79,7 +83,10 @@ li {
 dt {}
 dd {}
 
-h1, h2, h3, h4, h5, h6 {} 
+h1, h2, h3, h4, h5, h6 {
+  padding-left: 10px;
+  padding-right: 10px;
+} 
 h1 {
   color: #333;
 }
@@ -194,3 +201,16 @@ object {}
 
 /*   ===== PRINT  media query overrides previous styles =====  */
 @media print {}
+
+/*  ----- Custom -----  */
+
+.contact-page {
+  padding-left: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.section {
+  flex: 1;
+}
+
