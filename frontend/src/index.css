@@ -214,3 +214,45 @@ object {}
   flex: 1;
 }
 
+.education-skills {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; 
+}
+
+.education, .skills {
+  flex: 1; 
+}
+
+.education {
+  margin-right: 10px; 
+}
+
+.skills {
+  margin-left: 10px; 
+}
+
+.resume-button-box {
+  text-align: left; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  padding: 0 20px; 
+}
+
+.resume-button {
+  text-decoration: none;
+}
+
+.resume-button button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resume-button button:hover {
+  background-color: #0056b3;
+}

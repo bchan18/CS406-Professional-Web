@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      <Navbar /> {/* Navigation bar */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
