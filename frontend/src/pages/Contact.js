@@ -1,41 +1,89 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Contact() {
+  const [mailerState, setMailerState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+function handleStateChange(e) {
+  setMailerState((prevState) => ({
+    ...prevState,
+    [e.target.name]: e.target.value,
+  }));
+}
+
+const submitEmail = async (e) => {
+  e.preventDefault();
+  console.log({ mailerState });
+  const response = await fetch("http://localhost:3001/send", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({ mailerState }),
+  })
+    .then((res) => res.json())
+    .then(async (res) => {
+      const resData = await res;
+      console.log(resData);
+      if (resData.status === "success") {
+        alert("Message Sent");
+      } else if (resData.status === "fail") {
+        alert("Message failed to send");
+      }
+    })
+    .then(() => {
+      setMailerState({
+        email: "",
+        name: "",
+        message: "",
+      });
+    });
+};
+
+<form onSubmit={submitEmail}></form>
+
   return (
     <div className="contact-page">
       <div className="section"> 
-      <h1>Message Me</h1>
-      <form >
-        <label>
-          Name:<br />
-          <input
-            type="text"
-            name="name"
-
-            required
-          />
-        </label><br /><br />
-        <label>
-          Email:<br />
-          <input
-            type="email"
-            name="email"
-            required
-          />
-        </label><br /><br />
-        <label>
-          Message:<br />
-          <textarea
-            name="message"
-            required
-          />
-        </label><br /><br />
-        <button type="submit">Send Message</button>
-      </form>
+        <h1>Message Me</h1>
+        <form onSubmit={submitEmail}>
+          <label>Name:</label>
+            <input
+              type="text"
+              onChange={handleStateChange}
+              name="name"
+              value={mailerState.name}
+              aria-label="Name"
+              required
+            />
+            <label>Email:</label>
+            <input
+              type="email"
+              onChange={handleStateChange}
+              name="email"
+              value={mailerState.email}
+              aria-label="Email"
+              required
+            />
+            <label>Message:</label>
+            <textarea
+              onChange={handleStateChange}
+              name="message"
+              value={mailerState.message}
+              aria-label="Message"
+              required
+            />
+            <button className="contact-button" type="submit">Send Message</button>
+          </form>
       </div>
       <div className="section">
         <h1>Contact Info</h1>
-        <p><strong>Email:</strong> chanbria@oregonstate.edu</p>
+          <p><strong>Email:</strong> chanbria@oregonstate.edu</p>
+          <p><strong>Linkedin:</strong> https://www.linkedin.com/in/brianchan562/</p>
+          <p><strong>GitHub:</strong> https://github.com/bchan18</p>
       </div>
     </div>
   );

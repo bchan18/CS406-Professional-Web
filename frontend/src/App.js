@@ -6,6 +6,7 @@ import Projects from './pages/Projects';
 import Internship from './pages/Internship';
 import Contact from './pages/Contact';
 
+
 function App() {
   return (
     <Router>

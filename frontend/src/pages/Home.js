@@ -4,6 +4,7 @@ function Home() {
   return (
     <div className="home-page">
       <h1>Brian Chan</h1>
+        <h2>QA Engineering Intern & Computer Science Student</h2>
         <div className="resume-button-box">
           <a 
             href="/Brian_Chan_Resume.pdf" 

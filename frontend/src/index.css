@@ -56,7 +56,7 @@ a:visited {}
 
 /*  ----- Navigation ----- Override text links for navigation only.  */
 nav {
-  display: flex;
+  display:flex;
   justify-content: center;
   background-color: #333;
 }
@@ -140,16 +140,38 @@ datalist {}
 
 
 /*  ----- Form ----- */
-form {}
+form {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
 fieldset {}
   legend {}
 label {}
-button {}
-input {}
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+input {
+  width: 300px; 
+}
 select {}
   optgroup {}
   option {}
-textarea {}
+textarea {
+  width: 300px; 
+  height: 300px; 
+  
+}
 output {}
 meter {}
 progress {}
@@ -205,13 +227,17 @@ object {}
 /*  ----- Custom -----  */
 
 .contact-page {
-  padding-left: 10px;
-  display: flex;
-  gap: 20px;
+  display: flex; /* Enables Flexbox layout */
+  flex-direction: row; /* Arranges sections side by side */
+  justify-content: center; /* Centers sections horizontally */
+  align-items: flex-start; /* Aligns sections at the top */
+  height: 100vh; /* Full viewport height */
+  padding-top: 50px; /* Adds space from the top of the page */
 }
 
 .section {
-  flex: 1;
+  text-align: center; /* Centers text within each section */
+  margin: 0 20px; /* Adds spacing between the sections */
 }
 
 .education-skills {
@@ -239,20 +265,3 @@ object {}
   padding: 0 20px; 
 }
 
-.resume-button {
-  text-decoration: none;
-}
-
-.resume-button button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.resume-button button:hover {
-  background-color: #0056b3;
-}
