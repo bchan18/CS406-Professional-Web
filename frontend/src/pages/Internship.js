@@ -29,11 +29,20 @@ function Internship() {
         <li>Report Bugs and assign Tasks to appropiate Team member</li>
       </ul>
       <h2>Week 5</h2>
-        <p></p>
+      <ul>
+        <li>Introduction to Continous Integration/Continous Deployment</li>
+        <li>Running pipelines for integration test</li>
+      </ul>
       <h2>Week 6</h2>
-        <p></p>
+      <ul>
+        <li>Introduction to load testing using Locust</li>
+        <li>Assigned EOS project</li>
+      </ul>
       <h2>Week 7</h2>
-        <p></p>
+      <ul>
+        <li>Paired with developers to resolve any QA issues</li>
+        <li>Worked on Automation to streamline manual tasks</li>
+      </ul>
       <h2>Week 8</h2>
         <p></p>
       <h2>Week 9</h2>

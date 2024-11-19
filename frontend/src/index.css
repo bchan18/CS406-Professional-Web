@@ -227,17 +227,17 @@ object {}
 /*  ----- Custom -----  */
 
 .contact-page {
-  display: flex; /* Enables Flexbox layout */
-  flex-direction: row; /* Arranges sections side by side */
-  justify-content: center; /* Centers sections horizontally */
-  align-items: flex-start; /* Aligns sections at the top */
-  height: 100vh; /* Full viewport height */
-  padding-top: 50px; /* Adds space from the top of the page */
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: flex-start; 
+  height: 100vh; 
+  padding-top: 50px; 
 }
 
 .section {
-  text-align: center; /* Centers text within each section */
-  margin: 0 20px; /* Adds spacing between the sections */
+  text-align: center; 
+  margin: 0 20px; 
 }
 
 .education-skills {
@@ -265,3 +265,57 @@ object {}
   padding: 0 20px; 
 }
 
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  max-width: 1300px;
+  margin: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f9f9f9; 
+}
+
+.slide {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.slide-image {
+  width: 100%; 
+  height: 500px; 
+  object-fit: contain; 
+  border-radius: 10px; 
+}
+
+button.prev {
+  position: absolute;
+  top: 50%; 
+  left: 10px; 
+  transform: translateY(-50%); 
+  background: rgba(0, 0, 0, 0.5); 
+  color: white; 
+  border: none; 
+  border-radius: 5px;
+  font-size: 1.5rem; 
+  padding: 10px 15px; 
+  cursor: pointer;
+  z-index: 10;
+}
+
+button.next {
+  position: absolute;
+  top: 50%; 
+  right: 10px; 
+  transform: translateY(-50%); 
+  background: rgba(0, 0, 0, 0.5); 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  font-size: 1.5rem; 
+  padding: 10px 15px; 
+  cursor: pointer; 
+  z-index: 10; 
+}
