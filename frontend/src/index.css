@@ -1,37 +1,19 @@
-/*
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-*/
-
-/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
-/*  ===== See tablet, desktop, and print @media queries at the bottom. */
-
 /*   ----- Variables  -----  */
 :root {
-  --custom-color-name:;
-  --custom-embellishment-name:;
+  --primary-color: #1e90ff; 
+  --secondary-color: #f4f4f9; 
+  --accent-color: #ff6347; 
+  --text-color: #333;
+  --font-family: 'Roboto', Arial, sans-serif;
 }
 
 /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
-body {       /* Can alternatively define in html {}. */
-  background-color:;
-  background-image:;
-  color:;
-  font-family: Arial, sans-serif; 
+body {
   margin: 0;
-  padding:;
-  max-width:;
+  font-family: var(--font-family);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 /*  ----- Page layout blocks -----  */
@@ -56,17 +38,48 @@ a:visited {}
 
 /*  ----- Navigation ----- Override text links for navigation only.  */
 nav {
-  display:flex;
+  display: flex;
   justify-content: center;
-  background-color: #333;
+  align-items: center;
+  background: var(--primary-color);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 80%; 
+  margin: 20px auto; 
 }
+
 nav a {
   color: #fff;
-  padding: 14px 20px;
+  padding: 10px 20px;
   text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin: 0 10px; 
 }
+
 nav a:hover {
-  background-color: #575757;
+  color: var(--secondary-color);
+  background: var(--primary-color);
+  padding: 10px 25px; 
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(251, 251, 255, 0.3);
+  transform: scale(1.05); 
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 /*  -----  Typography  ----- */
@@ -142,8 +155,10 @@ datalist {}
 /*  ----- Form ----- */
 form {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
 }
 fieldset {}
   legend {}
@@ -152,7 +167,7 @@ button {
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -161,17 +176,30 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-input {
-  width: 300px; 
+input, textarea {
+  width: 90%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 select {}
   optgroup {}
   option {}
-textarea {
-  width: 300px; 
-  height: 300px; 
-  
-}
+  textarea {
+    width: 100%;
+    max-width: 100%; 
+    height: 150px; 
+    max-height: 300px; 
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    resize: vertical; 
+    box-sizing: border-box; 
+    background-color: #fff; 
+    outline: none; 
+  }
+
 output {}
 meter {}
 progress {}
@@ -236,8 +264,11 @@ object {}
 }
 
 .section {
-  text-align: center; 
-  margin: 0 20px; 
+  padding: 25px;
+  background: #fff;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .education-skills {
@@ -256,13 +287,6 @@ object {}
 
 .skills {
   margin-left: 10px; 
-}
-
-.resume-button-box {
-  text-align: left; 
-  margin-top: 20px; 
-  margin-bottom: 20px; 
-  padding: 0 20px; 
 }
 
 .slideshow-container {
@@ -318,4 +342,108 @@ button.next {
   padding: 10px 15px; 
   cursor: pointer; 
   z-index: 10; 
+}
+
+.section-box {
+  border: 1px solid #ccc; 
+  border-radius: 10px; 
+  padding: 20px; 
+  margin: 20px auto; 
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 40px);
+  max-width: 1200px;
+}
+
+
+.about-me, .education, .skills, .experience {
+  width: 100%;
+}
+
+.about-me p, .education p, .skills ul, .experience ul {
+  margin: 10px 0;
+}
+
+.header-box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 40px); 
+  max-width: 1200px; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.header-box h1 {
+  margin-bottom: 5px;
+}
+
+.header-box h2 {
+  margin-top: 0;
+}
+
+.resume-button-box {
+  margin-top: 10px;
+}
+
+.resume-button-box a button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resume-button-box a button:hover {
+  background-color: #0056b3;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #005582; 
+}
+
+.social-icon:nth-child(1) {
+  color: #333; 
+}
+
+.social-icon:nth-child(1):hover {
+  color: #000; 
+}
+
+.social-icon:nth-child(3) {
+  color: var(--primary-color); 
+}
+
+.social-icon:nth-child(3):hover {
+  color: #005582; 
+}
+
+.email-link, .linkedin-link, .github-link {
+  color: var(--primary-color); 
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
 }

@@ -8,43 +8,40 @@ app.use(express.json());
 app.use(cors());
 
 let transporter = nodemailer.createTransport({
-  service: "gmail",
+  service: "gmail", 
   auth: {
-    type: "OAuth2",
     user: process.env.EMAIL,
-    pass: process.env.WORD,
-    clientId: process.env.OAUTH_CLIENTID,
-    clientSecret: process.env.OAUTH_CLIENT_SECRET,
-    refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+    pass: process.env.WORD, 
   },
- });
- transporter.verify((err, success) => {
-  err
-    ? console.log(err)
-    : console.log(`=== Server is ready to take messages: ${success} ===`);
- });
- 
- app.post("/send", function (req, res) {
-  let mailOptions = {
-    from: `${req.body.mailerState.email}`,
+});
+
+transporter.verify((err, success) => {
+  if (err) {
+    console.log("Error verifying transporter:", err);
+  } else {
+    console.log(`Server ready to send messages: ${success}`);
+  }
+});
+
+app.post("/send", (req, res) => {
+  const { email, message } = req.body.mailerState;
+  const mailOptions = {
+    from: email,
     to: process.env.EMAIL,
-    subject: `Message from: ${req.body.mailerState.email}`,
-    text: `${req.body.mailerState.message}`,
+    subject: `Message from: ${email}`,
+    text: message,
   };
- 
-  transporter.sendMail(mailOptions, function (err, data) {
+
+  transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
-      res.json({
-        status: "fail",
-      });
+      console.log("Error sending mail:", err);
+      res.json({ status: "fail" });
     } else {
-      console.log("== Message Sent ==");
-      res.json({
-        status: "success",
-      });
+      console.log("Message sent:", info.response);
+      res.json({ status: "success" });
     }
   });
- });
+});
  
  const port = 3001;
  app.listen(port, () => {

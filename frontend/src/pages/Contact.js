@@ -81,9 +81,30 @@ const submitEmail = async (e) => {
       </div>
       <div className="section">
         <h1>Contact Info</h1>
-          <p><strong>Email:</strong> chanbria@oregonstate.edu</p>
-          <p><strong>Linkedin:</strong> https://www.linkedin.com/in/brianchan562/</p>
-          <p><strong>GitHub:</strong> https://github.com/bchan18</p>
+          <p>
+            <strong>Email: </strong> <a className="email-link" href="mailto:chanbria@oregonstate.edu"> chanbria@oregonstate.edu</a>
+          </p>
+          <p>
+            <strong>Linkedin: </strong>
+              <a 
+                className="linkedin-link"
+                href="https://www.linkedin.com/in/brianchan562/" 
+                target="_blank" 
+              >
+              https://www.linkedin.com/in/brianchan562/
+              </a>
+          </p>
+          <p>
+            <strong>GitHub: </strong>
+              <a 
+                className="github-link"
+                href="https://github.com/bchan18" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                https://github.com/bchan18
+              </a>
+          </p>
       </div>
     </div>
   );

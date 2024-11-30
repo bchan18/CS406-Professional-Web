@@ -19,11 +19,40 @@ const projectSlides = [
   },
 ];
 
+const projectVideos = [
+  {
+    title: 'Currency Microservice Demo',
+    url: 'https://www.youtube.com/embed/cd6N2mXVSfg',
+  },
+];
+
 const Projects = () => {
   return (
     <div>
-      <h1>Projects</h1>
+      <div className="header-box">
+        <h1>Projects</h1>
+      </div>
       <Slideshow slides={projectSlides} />
+      <div className="header-box">
+        <h1>Video Demos</h1>
+      </div>
+      <div className="header-box">
+        <div className="video-section">
+          {projectVideos.map((video, index) => (
+            <div key={index} className="video-card">
+              <h2>{video.title}</h2>
+              <iframe
+                width="560"
+                height="315"
+                src={video.url}
+                title={video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
