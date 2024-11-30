@@ -2,6 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const app = express();
 const cors = require("cors");
+const path = require('path');
 require("dotenv").config();
 
 app.use(express.json());
@@ -43,7 +44,13 @@ app.post("/send", (req, res) => {
   });
 });
  
- const port = 3001;
+ const port = 5000;
  app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
  });
+
+ app.use(express.static(path.join(__dirname, 'client/build')));
+
+ app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
