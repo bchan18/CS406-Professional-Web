@@ -49,7 +49,7 @@ function Internship() {
       <h2>Week 6</h2>
       <ul>
         <li>Introduction to load testing using Locust</li>
-        <li>Assigned EOS project</li>
+        <li>Assigned End of Semester (EOS) project</li>
       </ul>
       </div>
       <div className="section-box">
@@ -61,15 +61,17 @@ function Internship() {
       </div>
       <div className="section-box">
       <h2>Week 8</h2>
-        <p></p>
+        <li>Worked on EOS project</li>
+        <li>Given access to QA backlog and started tackling issues within the backlog</li>
       </div>
       <div className="section-box">
       <h2>Week 9</h2>
-        <p></p>
+        <li>Continued working on QA backlog and EOS project</li>
+        <li>Given tasks from multiple teams within the engineering department</li>
       </div>
       <div className="section-box">
       <h2>Week 10</h2>
-        <p></p>
+        <li>Presented End of Semester project infront of Engineering managers</li>
       </div>
     </div>
   );

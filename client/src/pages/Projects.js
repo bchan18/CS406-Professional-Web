@@ -21,6 +21,10 @@ const projectSlides = [
 
 const projectVideos = [
   {
+    title: 'Music App Demo',
+    url: 'https://www.youtube.com/embed/-DVGVBg4P80',
+  },
+  {
     title: 'Currency Microservice Demo',
     url: 'https://www.youtube.com/embed/cd6N2mXVSfg',
   },
@@ -34,7 +38,7 @@ const Projects = () => {
       </div>
       <Slideshow slides={projectSlides} />
       <div className="header-box">
-        <h1>Video Demos</h1>
+        <h1>Project Demos</h1>
       </div>
       <div className="header-box">
         <div className="video-section">

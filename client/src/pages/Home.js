@@ -76,6 +76,25 @@ function Home() {
         <h2>Experience</h2>
         <p>
           <div className="experience-header">
+          <strong>Power Digital Marketing</strong>
+          <span>September 2024 - Present</span>
+          </div>
+          QA Engineering Intern
+        </p>
+        <ul>
+          <li>
+            Performed manual QA tasks, including executing test cases, identifying software defects,
+            and documenting results to ensure application quality and functionality.
+          </li>
+          <li>
+            Created automation scripts to automate manual QA tasks, improving efficiency and accuracy in testing processes.
+          </li>
+          <li>
+            Collabrated with developers to identify and resolve bug issues to improve product functionality. 
+          </li>
+        </ul>
+        <p>
+          <div className="experience-header">
           <strong>The Testing Company</strong>
           <span>March 2022 - March 2023</span>
           </div>
@@ -96,7 +115,7 @@ function Home() {
         <p>
           <div className="experience-header">
           <strong>CVS</strong>
-          <span>March 2022 - March 2023</span>
+          <span>September 2019 - March 2023</span>
           </div>
           Certified Pharmacy Technician
         </p>
